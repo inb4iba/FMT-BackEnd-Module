@@ -25,4 +25,9 @@ public class Produto {
     public Double getValorTotal() {
         return quantidade * preco;
     }
+
+    @Override
+    public String toString() {
+        return "Produto: " + nome + " | Quantidade: " + quantidade + " | Preço: " + preco;
+    }
 }

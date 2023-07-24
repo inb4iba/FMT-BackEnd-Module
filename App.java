@@ -5,6 +5,7 @@ public class App {
         Produto produto = new Produto("Produto 1", 25.0, 3);
         produto.adicionarAoEstoque(4);
         produto.removerDoEstoque(2);
+        System.out.println(produto.toString());
         System.out.println(produto.getValorTotal().toString());
     }
 
