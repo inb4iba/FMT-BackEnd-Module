@@ -6,13 +6,14 @@ public class Exercicio {
 
     public static void main(String[] args) {
         ArrayList<String> names = new ArrayList<>();
+        ArrayList<Double[]> scores = new ArrayList<>();
         while (true) {
             System.out.println("Entre com o nome do aluno: ");
             String entry = sc.next();
             if (entry.equalsIgnoreCase("fim"))
                 break;
             names.add(entry);
-            Double[] scores = getScores();
+            scores.add(getScores());
         }
         sc.close();
     }
