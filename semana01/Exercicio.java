@@ -42,6 +42,12 @@ public class Exercicio {
             scoresStr += "Nota " + (i + 1) + ": " + scores[i] + ", ";
             average += scores[i];
         }
-        return scoresStr + " | Média: " + (average / scores.length);
+        average /= scores.length;
+        return scoresStr + " | Média: " + average +
+                " | " + (isApproved(average) ? "APROVADO" : "REPROVADO");
+    }
+
+    private static boolean isApproved(Double average) {
+        return average >= 7;
     }
 }
