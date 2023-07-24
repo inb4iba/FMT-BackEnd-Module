@@ -37,9 +37,11 @@ public class Exercicio {
 
     private static String formatScores(Double[] scores) {
         String scoresStr = "";
+        Double average = 0.0;
         for (int i = 0; i < scores.length; i++) {
             scoresStr += "Nota " + (i + 1) + ": " + scores[i] + ", ";
+            average += scores[i];
         }
-        return scoresStr;
+        return scoresStr + " | Média: " + (average / scores.length);
     }
 }
