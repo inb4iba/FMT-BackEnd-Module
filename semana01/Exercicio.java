@@ -2,15 +2,28 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Exercicio {
+    private static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         ArrayList<String> names = new ArrayList<>();
         while (true) {
-            String entry = sc.nextLine();
+            System.out.println("Entre com o nome do aluno: ");
+            String entry = sc.next();
             if (entry.equalsIgnoreCase("fim"))
                 break;
             names.add(entry);
+            Double[] scores = getScores();
         }
         sc.close();
+    }
+
+    private static Double[] getScores() {
+        Double[] scores = new Double[3];
+        for (int i = 1; i <= scores.length; i++) {
+            System.out.println("Entre com a nota " + i + ": ");
+            Double score = sc.nextDouble();
+            scores[i - 1] = score;
+        }
+        return scores;
     }
 }
