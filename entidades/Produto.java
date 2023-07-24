@@ -17,4 +17,8 @@ public class Produto {
     public void adicionarAoEstoque(Integer quantidade) {
         this.quantidade += quantidade;
     }
+
+    public void removerDoEstoque(Integer quantidade) {
+        this.quantidade -= quantidade;
+    }
 }
