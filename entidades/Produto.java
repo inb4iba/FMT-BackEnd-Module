@@ -21,4 +21,8 @@ public class Produto {
     public void removerDoEstoque(Integer quantidade) {
         this.quantidade -= quantidade;
     }
+
+    public Double getValorTotal() {
+        return quantidade * preco;
+    }
 }
