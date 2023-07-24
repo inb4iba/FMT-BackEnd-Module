@@ -3,18 +3,19 @@ import java.util.Scanner;
 
 public class Exercicio {
     private static Scanner sc = new Scanner(System.in);
+    private static ArrayList<String> students = new ArrayList<>();
+    private static ArrayList<Double[]> scores = new ArrayList<>();
 
     public static void main(String[] args) {
-        ArrayList<String> names = new ArrayList<>();
-        ArrayList<Double[]> scores = new ArrayList<>();
         while (true) {
             System.out.println("Entre com o nome do aluno: ");
             String entry = sc.next();
             if (entry.equalsIgnoreCase("fim"))
                 break;
-            names.add(entry);
+            students.add(entry);
             scores.add(getScores());
         }
+        printStudentsAndScores();
         sc.close();
     }
 
@@ -26,5 +27,19 @@ public class Exercicio {
             scores[i - 1] = score;
         }
         return scores;
+    }
+
+    private static void printStudentsAndScores() {
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println(students.get(i) + " | " + formatScores(scores.get(i)));
+        }
+    }
+
+    private static String formatScores(Double[] scores) {
+        String scoresStr = "";
+        for (int i = 0; i < scores.length; i++) {
+            scoresStr += "Nota " + (i + 1) + ": " + scores[i] + ", ";
+        }
+        return scoresStr;
     }
 }
