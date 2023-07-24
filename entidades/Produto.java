@@ -13,4 +13,8 @@ public class Produto {
         this.preco = preco;
         this.quantidade = quantidade;
     }
+
+    public void adicionarAoEstoque(Integer quantidade) {
+        this.quantidade += quantidade;
+    }
 }
