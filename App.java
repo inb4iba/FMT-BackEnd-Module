@@ -15,12 +15,14 @@ public class App {
         Cargo cargo3 = new Cargo("Desenvolvedor Back-End", 2000.0, Nivel.JUNIOR);
         addCargos(cargo1, cargo2, cargo3);
 
-        addColaborador(new Colaborador("Luquinhas", LocalDate.now(), cargo1, 2500.0));
+        addColaborador(new Colaborador("Luquinhas", LocalDate.of(2023, 3,
+                13), cargo1, 2500.0));
         addColaborador(new Colaborador("Pedrinho", LocalDate.of(2023, 3,
                 13), cargo2, 5000.0));
         addColaborador(new Colaborador("Marquinhos", LocalDate.now(), cargo3, 2250.0));
 
         desligarColaborador(colaboradores.get(1));
+        promoverColaborador(colaboradores.get(0), cargo2);
 
         System.out.println("Colaboradores Ativos:");
         listarColaboradoresAtivos();
@@ -39,6 +41,11 @@ public class App {
 
     private static void desligarColaborador(Colaborador colaborador) {
         colaborador.setDtDesligamento(LocalDate.now());
+    }
+
+    private static void promoverColaborador(Colaborador colaborador, Cargo cargo) {
+        colaborador.setCargo(cargo);
+        colaborador.setSalario(cargo.getSalarioBase());
     }
 
     private static void listarColaboradoresAtivos() {
