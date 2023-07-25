@@ -17,8 +17,10 @@ public class App {
 
         addColaborador(new Colaborador("Luquinhas", LocalDate.now(), cargo1, 2500.0));
         addColaborador(new Colaborador("Pedrinho", LocalDate.of(2023, 3,
-                13), LocalDate.now(), cargo2, 5000.0));
+                13), cargo2, 5000.0));
         addColaborador(new Colaborador("Marquinhos", LocalDate.now(), cargo3, 2250.0));
+
+        desligarColaborador(colaboradores.get(1));
 
         System.out.println("Colaboradores Ativos:");
         listarColaboradoresAtivos();
@@ -33,6 +35,10 @@ public class App {
 
     private static void addColaborador(Colaborador colaborador) {
         colaboradores.add(colaborador);
+    }
+
+    private static void desligarColaborador(Colaborador colaborador) {
+        colaborador.setDtDesligamento(LocalDate.now());
     }
 
     private static void listarColaboradoresAtivos() {
