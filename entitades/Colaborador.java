@@ -9,6 +9,21 @@ public class Colaborador {
     private Cargo cargo;
     private Double salario;
 
+    public Colaborador(String nome, LocalDate dtAdmissao, Cargo cargo, Double salario) {
+        this.nome = nome;
+        this.dtAdmissao = dtAdmissao;
+        this.cargo = cargo;
+        this.salario = salario;
+    }
+
+    public Colaborador(String nome, LocalDate dtAdmissao, LocalDate dtDesligamento, Cargo cargo, Double salario) {
+        this.nome = nome;
+        this.dtAdmissao = dtAdmissao;
+        this.dtDesligamento = dtDesligamento;
+        this.cargo = cargo;
+        this.salario = salario;
+    }
+
     public String getNome() {
         return nome;
     }
