@@ -67,8 +67,8 @@ public class Colaborador {
     @Override
     public String toString() {
         return "Nome: " + nome +
-                "\nCargo: {\n" +
-                "}\nSalário: " + salario +
+                "\nCargo: {\n" + cargo +
+                "\n}\nSalário: " + salario +
                 "\nData de Admissão: " + dtAdmissao +
                 "\nData de Desligamento: " + dtDesligamento;
     }
