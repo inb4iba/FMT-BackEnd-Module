@@ -20,7 +20,10 @@ public class App {
                 13), LocalDate.now(), cargo2, 5000.0));
         colaboradores.add(new Colaborador("Marquinhos", LocalDate.now(), cargo3, 2250.0));
 
+        System.out.println("Colaboradores Ativos:");
         listarColaboradoresAtivos();
+        System.out.println("--------------------------\nColaboradores por Cargo:");
+        listarColaboradoresPorCargo(cargo2);
     }
 
     private static void addCargos(Cargo... cargosParams) {
@@ -31,6 +34,13 @@ public class App {
     private static void listarColaboradoresAtivos() {
         colaboradores.forEach((c) -> {
             if (c.getDtDesligamento() == null)
+                System.out.println(c);
+        });
+    }
+
+    private static void listarColaboradoresPorCargo(Cargo cargo) {
+        colaboradores.forEach((c) -> {
+            if (c.getCargo().equals(cargo))
                 System.out.println(c);
         });
     }
