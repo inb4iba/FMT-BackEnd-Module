@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import entitades.Cargo;
 import entitades.Colaborador;
@@ -28,6 +30,8 @@ public class App {
         listarColaboradoresAtivos();
         System.out.println("--------------------------\nColaboradores por Cargo:");
         listarColaboradoresPorCargo(cargo2);
+        System.out.println("--------------------------\nColaboradores por Salário:");
+        listarColaboradoresPorMaiorSalario();
     }
 
     private static void addCargos(Cargo... cargosParams) {
@@ -50,15 +54,29 @@ public class App {
 
     private static void listarColaboradoresAtivos() {
         colaboradores.forEach((c) -> {
-            if (c.getDtDesligamento() == null)
+            if (c.getDtDesligamento() == null) {
+                System.out.println("---------");
                 System.out.println(c);
+            }
         });
     }
 
     private static void listarColaboradoresPorCargo(Cargo cargo) {
         colaboradores.forEach((c) -> {
-            if (c.getCargo().equals(cargo))
+            if (c.getCargo().equals(cargo)) {
+                System.out.println("---------");
                 System.out.println(c);
+            }
+        });
+    }
+
+    private static void listarColaboradoresPorMaiorSalario() {
+        ArrayList<Colaborador> colaboradoresPorSalario = new ArrayList<>(colaboradores);
+        colaboradoresPorSalario.sort(Comparator.comparing(Colaborador::getSalario));
+        Collections.reverse(colaboradoresPorSalario);
+        colaboradoresPorSalario.forEach(c -> {
+            System.out.println("---------");
+            System.out.println(c);
         });
     }
 }
