@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -48,7 +49,7 @@ public class App {
     private static Produto cadastrarProduto(TipoProduto tipo) {
         String entrada, nome;
         double preco;
-        // LocalDate data;
+        LocalDate data;
         Produto produto = null;
         do {
             try {
@@ -64,8 +65,8 @@ public class App {
                     }
                     case USADO -> {
                         entrada = JOptionPane.showInputDialog("Data de fabricação (dd/mm/aaaa)");
-                        // data = new SimpleDateFormat("dd/MM/yyyy").parse(entrada);
-                        produto = new ProdutoUsado(nome, preco, LocalDate.now());
+                        data = LocalDate.parse(entrada, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                        produto = new ProdutoUsado(nome, preco, data);
                     }
                     default -> new Exception().notify();
                 }
