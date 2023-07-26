@@ -36,4 +36,9 @@ public class Produto {
     protected void setTipo(TipoProduto tipo) {
         this.tipo = tipo;
     }
+
+    @Override
+    public String toString() {
+        return nome + " R$ " + preco;
+    }
 }

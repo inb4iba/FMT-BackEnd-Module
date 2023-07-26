@@ -16,4 +16,9 @@ public class ProdutoImportado extends Produto {
         return taxa;
     }
 
+    @Override
+    public String toString() {
+        return this.getNome() + " R$ " + (this.getPreco() + taxa) + " (Taxa: R$ " + taxa + ")";
+    }
+
 }

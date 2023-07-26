@@ -16,6 +16,7 @@ public class App {
         int nProdutos = getTotalProdutos();
         criarListaProdutos(nProdutos);
 
+        System.out.println("Amostragem de preço dos produtos:");
         produtos.forEach(p -> System.out.println(p));
     }
 
