@@ -25,3 +25,6 @@ SELECT * FROM clientes WHERE nome LIKE '%Vini%';
 
 -- Exercicio 6
 UPDATE clientes SET endereco = 'Rua do Limão' WHERE nome = 'Marcus Vinicius';
+
+-- Exercicio 7
+DELETE FROM clientes WHERE id = 2;
