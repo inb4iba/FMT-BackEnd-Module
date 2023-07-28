@@ -7,3 +7,9 @@ CREATE TABLE clientes (
     telefone VARCHAR(20),
     endereco TEXT
 );
+
+-- Exercicio 2
+INSERT INTO clientes (nome, telefone, endereco)
+VALUES ('Vinicius Silva', '987654', 'Rua Girassol'),
+('Maria Antonia', '123456' , 'Rua Rosas'),
+('Marcus Vinicius', '654123', 'Rua Itajai');
