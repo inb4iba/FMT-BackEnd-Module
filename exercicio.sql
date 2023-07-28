@@ -17,3 +17,14 @@ CREATE TABLE imoveis(
 );
 
 ALTER TABLE proprietarios ADD COLUMN id SERIAL PRIMARY KEY;
+
+DROP TABLE imoveis;
+
+CREATE TABLE imoveis(
+    id SERIAL PRIMARY KEY,
+    tipo_imovel TIPO_IMOVEL,
+    valor INTEGER,
+    observacoes TEXT,
+    detalhes TEXT,
+    endereco TEXT
+);
