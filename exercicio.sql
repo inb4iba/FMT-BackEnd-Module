@@ -15,3 +15,5 @@ CREATE TABLE imoveis(
     detalhes TEXT,
     endereco TEXT
 );
+
+ALTER TABLE proprietarios ADD COLUMN id SERIAL PRIMARY KEY;
