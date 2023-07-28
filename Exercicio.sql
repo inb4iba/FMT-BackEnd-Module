@@ -13,3 +13,6 @@ INSERT INTO clientes (nome, telefone, endereco)
 VALUES ('Vinicius Silva', '987654', 'Rua Girassol'),
 ('Maria Antonia', '123456' , 'Rua Rosas'),
 ('Marcus Vinicius', '654123', 'Rua Itajai');
+
+-- Exercicio 3
+SELECT * FROM clientes;
