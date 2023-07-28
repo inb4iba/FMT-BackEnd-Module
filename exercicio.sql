@@ -28,3 +28,6 @@ CREATE TABLE imoveis(
     detalhes TEXT,
     endereco TEXT
 );
+
+ALTER TABLE proprietarios ADD COLUMN telefone VARCHAR(20);
+
