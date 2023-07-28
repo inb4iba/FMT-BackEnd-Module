@@ -32,3 +32,7 @@ CREATE TABLE imoveis(
 ALTER TABLE proprietarios ADD COLUMN telefone VARCHAR(20);
 
 ALTER TABLE imoveis DROP COLUMN detalhes;
+
+ALTER TABLE imoveis ADD COLUMN id_proprietario INTEGER;
+
+ALTER TABLE imoveis ADD CONSTRAINT proprietarioFK FOREIGN KEY (id_proprietario) REFERENCES proprietarios (id);
