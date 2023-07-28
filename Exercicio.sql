@@ -16,3 +16,9 @@ VALUES ('Vinicius Silva', '987654', 'Rua Girassol'),
 
 -- Exercicio 3
 SELECT * FROM clientes;
+
+-- Exercicio 4
+SELECT * FROM clientes WHERE id = 1;
+
+-- Exercicio 5	
+SELECT * FROM clientes WHERE nome LIKE '%Vini%';
