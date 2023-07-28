@@ -31,3 +31,4 @@ CREATE TABLE imoveis(
 
 ALTER TABLE proprietarios ADD COLUMN telefone VARCHAR(20);
 
+ALTER TABLE imoveis DROP COLUMN detalhes;
