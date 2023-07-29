@@ -29,3 +29,7 @@ VALUES ('3654589', 1),
 ('36524569', 2),
 ('3654962', 3),
 ('12365458', 3);
+
+-- Exercicio 9
+SELECT F.id, F.nome, C.cargo, T.telefone FROM funcionarios F JOIN cargos C ON id_cargo = C.id
+JOIN telefones T ON F.id = id_funcionario;
