@@ -33,4 +33,9 @@ public class PersonsController {
     public Person getPersonById(@PathVariable Long id) {
         return service.getPersonById(id);
     }
+
+    @GetMapping("/active")
+    public List<Person> getPersonsActive() {
+        return service.getPersonsActive();
+    }
 }

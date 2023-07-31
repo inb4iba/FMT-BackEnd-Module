@@ -24,4 +24,8 @@ public class PersonsService {
     public Person getPersonById(Long id) {
         return repository.findById(id).orElseThrow();
     }
+
+    public List<Person> getPersonsActive() {
+        return repository.findAllByStatusTrue();
+    }
 }
