@@ -7,6 +7,7 @@ public class Pet {
     private String race;
     private Double weight;
     private Integer age;
+    private Tutor tutor;
 
     public Pet(Integer id, String name, String species, String race, Double weight, Integer age) {
         this.id = id;
@@ -63,5 +64,13 @@ public class Pet {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Tutor getTutor() {
+        return tutor;
+    }
+
+    public void setTutor(Tutor tutor) {
+        this.tutor = tutor;
     }
 }

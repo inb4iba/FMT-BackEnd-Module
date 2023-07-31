@@ -56,4 +56,12 @@ public class TutorsRepository {
             tutors.remove(index);
         return itemFound;
     }
+
+    public Tutor getTutorById(int id) {
+        for (Tutor t : tutors) {
+            if (t.getId() == id)
+                return t;
+        }
+        return null;
+    }
 }
