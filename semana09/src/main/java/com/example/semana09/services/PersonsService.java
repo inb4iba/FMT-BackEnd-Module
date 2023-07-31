@@ -38,4 +38,8 @@ public class PersonsService {
     public void deletePerson(Long id) {
         repository.deleteById(id);
     }
+
+    public List<Person> getPersonsByFilter(String filter) {
+        return repository.findAllByFilter(filter);
+    }
 }

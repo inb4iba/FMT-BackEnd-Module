@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.semana09.entities.Person;
@@ -27,7 +28,9 @@ public class PersonsController {
     }
 
     @GetMapping
-    public List<Person> getAllPersons() {
+    public List<Person> getAllPersons(@RequestParam(required = false, name = "filter") String filter) {
+        if (filter != null)
+            return service.getPersonsByFilter(filter.toLowerCase());
         return service.getAllPersons();
     }
 
