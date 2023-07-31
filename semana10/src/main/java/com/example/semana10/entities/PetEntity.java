@@ -17,6 +17,7 @@ public class PetEntity {
     private String species;
     private Integer age;
     private Float weight;
+    private boolean isAvailable;
 
     @ManyToOne
     private UserEntity user;
