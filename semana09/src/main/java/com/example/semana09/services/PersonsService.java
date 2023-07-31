@@ -28,4 +28,10 @@ public class PersonsService {
     public List<Person> getPersonsActive() {
         return repository.findAllByStatusTrue();
     }
+
+    public Person updatePerson(Long id, Person updatedData) {
+        getPersonById(id);
+        updatedData.setId(id);
+        return repository.save(updatedData);
+    }
 }

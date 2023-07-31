@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,5 +38,10 @@ public class PersonsController {
     @GetMapping("/active")
     public List<Person> getPersonsActive() {
         return service.getPersonsActive();
+    }
+
+    @PutMapping("/{id}")
+    public Person updatePerson(@PathVariable Long id, @RequestBody Person updatedData) {
+        return service.updatePerson(id, updatedData);
     }
 }
