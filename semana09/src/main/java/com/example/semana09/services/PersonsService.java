@@ -20,4 +20,8 @@ public class PersonsService {
     public List<Person> getAllPersons() {
         return repository.findAll();
     }
+
+    public Person getPersonById(Long id) {
+        return repository.findById(id).orElseThrow();
+    }
 }
